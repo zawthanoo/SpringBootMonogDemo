@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "9a4bb73e-1097-4b01-a1b6-e6998ed25087",
+		"name": "AppCommandCenter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SaveAppConfig",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"app\":\"wavepay\",\n    \"version\":1,\n    \"config\":{\n  \"cashinCashout\": [\n    {\n      \"bankCode\": \"ymb0001\",\n      \"description\": {\n        \"en\": \"Yoma is down\",\n        \"my\": \"Yoma is down\",\n        \"zw\": \"Yoma is down\"\n      },\n      \"public\": true\n    }\n  ],\n  \"maintenanceScreen\": {\n    \"description\": {\n      \"en\": \"System is down will get back soon. Please try again later.\",\n      \"my\": \"တယ်လီနောနှင့်ပတ်သက်သော ဝန်ဆောင်မှုများ ယာယီ မရရှိနိုင်သေးပါ၊ အဆင်မပြေမှုများအတွက် တောင်းပန်အပ်ပါသည်။\",\n      \"zw\": \"တယ္လီေနာႏွင့္ပတ္သက္ေသာ ဝန္ေဆာင္မႈမ်ား ယာယီ မရရွိႏိုင္ေသးပါ၊ အဆင္မေျပမႈမ်ားအတြက္ ေတာင္းပန္အပ္ပါသည္။\"\n    },\n    \"show\": false,\n    \"title\": {\n      \"en\": \"System Down English for Testing\",\n      \"my\": \"System Down Unicode\",\n      \"zw\": \"System Down Zawgyi\"\n    }\n  },\n  \"telcoServices\": [\n    {\n      \"description\": {\n        \"en\": \"Telenor is down Enlgish\",\n        \"my\": \"Telenor is down Unicode\",\n        \"zw\": \"Telenor is down Zawgyi\"\n      },\n      \"operator\": \"telenor\",\n      \"public\": true\n    },\n    {\n      \"description\": {\n        \"en\": \"MPT is down Enlgish Done\",\n        \"my\": \"MPT is down Unicode\",\n        \"zw\": \"MPT is down Zawgyi\"\n      },\n      \"operator\": \"mpt\",\n      \"public\": false\n    }\n  ]\n}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"config"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "applicaion/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/config/wavepay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"config",
+						"wavepay"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

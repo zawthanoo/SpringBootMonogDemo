@@ -1,0 +1,25 @@
+version: "3.8"
+
+networks:
+  app-command-center-network:
+    external: false
+    name: app-command-center-network
+services:
+  app-commandr-center-db:
+    networks:
+      - app-command-center-network
+    image: mongo:latest
+    container_name: app-command-center-db
+    volumes:
+      - ./mongo-volume:/Users/thetkhine/mongo-data
+    ports:
+      - 27017:27017
+  app-command-center-image:
+    networks:
+      - app-command-center-network
+    image: appcommandcenter-1.0
+    container_name: appcommandcenter-1.0
+    ports:
+      - 8080:8080
+    links:
+      - app-commandr-center-db
